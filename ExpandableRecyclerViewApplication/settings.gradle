@@ -1,1 +1,1 @@
-include ':app', ':expandablerecyclerview', ':expandable-recycler-view'
+include ':expandable-recycler-view'
