@@ -44,9 +44,9 @@ public abstract class ExpandableRecyclerViewAdapter<GVH extends ExpandableRecycl
 
     protected abstract RecyclerView.ViewHolder onCreateGroupViewHolder(ViewGroup parent, int viewType);
 
-    protected abstract void onBindChildViewHolder(CVH holder, int position);
+    protected abstract void onBindItemViewHolder(CVH holder, int position);
 
-    protected abstract void onBindGroupViewHolder(GVH holder, int position);
+    protected abstract void onBindSublistViewHolder(GVH holder, int position);
 
     protected abstract void onCollapseGroup(View view);
 
@@ -105,10 +105,10 @@ public abstract class ExpandableRecyclerViewAdapter<GVH extends ExpandableRecycl
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         switch (getItemViewType(position)) {
             case SUBLIST:
-                onBindGroupViewHolder((GVH) holder, position);
+                onBindSublistViewHolder((GVH) holder, position);
                 break;
             case ITEM:
-                onBindChildViewHolder((CVH) holder, position);
+                onBindItemViewHolder((CVH) holder, position);
                 break;
         }
         setSlideInAnimation(holder.itemView);
