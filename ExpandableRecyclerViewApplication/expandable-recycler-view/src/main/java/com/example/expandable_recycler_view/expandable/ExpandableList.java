@@ -1,4 +1,4 @@
-package com.example.nelsoncheung.expandablerecyclerviewapplication.expandable;
+package com.example.expandable_recycler_view.expandable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -61,7 +61,7 @@ public class ExpandableList<I extends ExpandableSublist> extends ArrayList {
         int groupPosition = 0;
         for (int i = 0; i < groupIndex; i++)
             groupPosition += ((I) super.get(i)).getItemCount();
-        
+
         return groupPosition;
     }
 
@@ -83,6 +83,20 @@ public class ExpandableList<I extends ExpandableSublist> extends ArrayList {
         return getSublistByIndex(i);
     }
 
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("[");
+        for (int i = 0; i < this.size(); i++) {
+            if (i > 0) {
+                stringBuilder.append(", ");
+            }
+            stringBuilder.append(this.get(i));
+        }
+        stringBuilder.append("]");
+
+        return stringBuilder.toString();
+    }
 
     public static void main(String[] args) {
 
@@ -99,9 +113,10 @@ public class ExpandableList<I extends ExpandableSublist> extends ArrayList {
         ExpandableList list = new ExpandableList(groups);
 
         list.setExpandOrCollapse(0);
-//        list.setExpandOrCollapse(1);
+        list.setExpandOrCollapse(1);
         list.setExpandOrCollapse(2);
 
+        System.out.println(list);
 
 
     }

@@ -1,4 +1,4 @@
-package com.example.nelsoncheung.expandablerecyclerviewapplication.recyclerview;
+package com.example.expandable_recycler_view.recyclerview;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

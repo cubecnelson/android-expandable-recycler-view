@@ -1,4 +1,4 @@
-package com.example.nelsoncheung.expandablerecyclerviewapplication.expandable;
+package com.example.expandable_recycler_view.expandable;
 
 import java.util.List;
 
