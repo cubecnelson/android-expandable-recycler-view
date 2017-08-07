@@ -40,9 +40,9 @@ public abstract class ExpandableRecyclerViewAdapter<GVH extends ExpandableRecycl
     }
 
 
-    protected abstract RecyclerView.ViewHolder onCreateChildViewHolder(ViewGroup parent, int viewType);
+    protected abstract RecyclerView.ViewHolder onCreateItemViewHolder(ViewGroup parent, int viewType);
 
-    protected abstract RecyclerView.ViewHolder onCreateGroupViewHolder(ViewGroup parent, int viewType);
+    protected abstract RecyclerView.ViewHolder onCreateSublistViewHolder(ViewGroup parent, int viewType);
 
     protected abstract void onBindItemViewHolder(CVH holder, int position);
 
@@ -94,9 +94,9 @@ public abstract class ExpandableRecyclerViewAdapter<GVH extends ExpandableRecycl
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         switch (viewType) {
             case SUBLIST:
-                return onCreateGroupViewHolder(parent, viewType);
+                return onCreateSublistViewHolder(parent, viewType);
             case ITEM:
-                return onCreateChildViewHolder(parent, viewType);
+                return onCreateItemViewHolder(parent, viewType);
         }
         return null;
     }
