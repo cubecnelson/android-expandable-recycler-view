@@ -1,7 +1,7 @@
 # android-expandable-recycler-view
 Simple and easy-to-use expandable recycler view
 
-Add it in your root build.gradle at the end of repositories:
+Step 1. Add it in your root build.gradle at the end of repositories:
 ```
 	allprojects {
 		repositories {
